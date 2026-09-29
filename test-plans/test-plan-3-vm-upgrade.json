@@ -1,0 +1,28 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.8.5",
+  "resource_changes": [
+    {
+      "address": "azurerm_linux_virtual_machine.web",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "web",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["update"],
+        "before": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-web-frontend",
+          "size": "Standard_B1s"
+        },
+        "after": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-web-frontend",
+          "size": "Standard_B2s"
+        }
+      }
+    }
+  ]
+}

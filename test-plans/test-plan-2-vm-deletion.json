@@ -1,0 +1,23 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.8.5",
+  "resource_changes": [
+    {
+      "address": "azurerm_linux_virtual_machine.legacy_db",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "legacy_db",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["delete"],
+        "before": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-legacy-database",
+          "size": "Standard_D4s_v5"
+        },
+        "after": null
+      }
+    }
+  ]
+}

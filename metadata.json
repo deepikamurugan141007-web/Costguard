@@ -1,0 +1,7 @@
+{
+  "name": "CostGuard",
+  "description": "Azure Infrastructure Cost Impact Predictor using live Azure Retail Prices and an embedded SQLite pricing cache.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

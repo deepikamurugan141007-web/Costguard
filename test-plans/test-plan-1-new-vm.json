@@ -1,0 +1,24 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.8.5",
+  "resource_changes": [
+    {
+      "address": "azurerm_linux_virtual_machine.worker",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "worker",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-worker-eastus",
+          "size": "Standard_B2s",
+          "tags": { "role": "background-worker" }
+        }
+      }
+    }
+  ]
+}

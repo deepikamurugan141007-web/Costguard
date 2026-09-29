@@ -1,0 +1,76 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.8.5",
+  "resource_changes": [
+    {
+      "address": "azurerm_linux_virtual_machine.app_server",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "app_server",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["update"],
+        "before": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-app-prod",
+          "resource_group_name": "rg-costguard-prod",
+          "size": "Standard_B1s",
+          "tags": { "environment": "production" }
+        },
+        "after": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-app-prod",
+          "resource_group_name": "rg-costguard-prod",
+          "size": "Standard_D2s_v3",
+          "tags": { "environment": "production", "upgraded": "true" }
+        }
+      }
+    },
+    {
+      "address": "azurerm_managed_disk.data_disk",
+      "mode": "managed",
+      "type": "azurerm_managed_disk",
+      "name": "data_disk",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "create_option": "Empty",
+          "disk_size_gb": 128,
+          "location": "East US",
+          "name": "disk-app-data",
+          "resource_group_name": "rg-costguard-prod",
+          "storage_account_type": "Premium_LRS",
+          "tier": "P10"
+        }
+      }
+    },
+    {
+      "address": "azurerm_resource_group.rg",
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["no-op"],
+        "before": { "location": "East US", "name": "rg-costguard-prod" },
+        "after": { "location": "East US", "name": "rg-costguard-prod" }
+      }
+    },
+    {
+      "address": "azurerm_virtual_network.vnet",
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["no-op"],
+        "before": { "address_space": ["10.0.0.0/16"], "location": "East US", "name": "vnet-costguard-prod" },
+        "after": { "address_space": ["10.0.0.0/16"], "location": "East US", "name": "vnet-costguard-prod" }
+      }
+    }
+  ]
+}

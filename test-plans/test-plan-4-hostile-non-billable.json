@@ -1,0 +1,87 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.8.5",
+  "resource_changes": [
+    {
+      "address": "azurerm_resource_group.rg1",
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "location": "East US", "name": "rg-hostile-1" } }
+    },
+    {
+      "address": "azurerm_virtual_network.vnet1",
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "location": "East US", "name": "vnet-hostile-1", "address_space": ["10.0.0.0/16"] } }
+    },
+    {
+      "address": "azurerm_subnet.subnet1",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "name": "snet-1", "address_prefixes": ["10.0.1.0/24"] } }
+    },
+    {
+      "address": "azurerm_subnet.subnet2",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet2",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "name": "snet-2", "address_prefixes": ["10.0.2.0/24"] } }
+    },
+    {
+      "address": "azurerm_network_security_group.nsg1",
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "location": "East US", "name": "nsg-hostile-1" } }
+    },
+    {
+      "address": "azurerm_network_security_rule.rule1",
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "rule1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "name": "allow-ssh", "priority": 100, "direction": "Inbound" } }
+    },
+    {
+      "address": "azurerm_route_table.rt1",
+      "mode": "managed",
+      "type": "azurerm_route_table",
+      "name": "rt1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "location": "East US", "name": "rt-hostile-1" } }
+    },
+    {
+      "address": "azurerm_network_interface.nic1",
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "nic1",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": { "actions": ["create"], "before": null, "after": { "location": "East US", "name": "nic-hostile-1" } }
+    },
+    {
+      "address": "azurerm_linux_virtual_machine.bastion",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "bastion",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-bastion",
+          "size": "Standard_B1s"
+        }
+      }
+    }
+  ]
+}
